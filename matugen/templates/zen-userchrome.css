@@ -1,0 +1,551 @@
+/* Matugen → Transparent Zen: userChrome.css
+   Generated from {{image}} ({{mode}} scheme) */
+
+:root {
+  /* Material You palette */
+  --m3-primary: {{colors.primary.default.hex}};
+  --m3-on-primary: {{colors.on_primary.default.hex}};
+  --m3-primary-container: {{colors.primary_container.default.hex}};
+  --m3-on-primary-container: {{colors.on_primary_container.default.hex}};
+  --m3-secondary: {{colors.secondary.default.hex}};
+  --m3-secondary-container: {{colors.secondary_container.default.hex}};
+  --m3-on-secondary-container: {{colors.on_secondary_container.default.hex}};
+  --m3-tertiary: {{colors.tertiary.default.hex}};
+  --m3-tertiary-container: {{colors.tertiary_container.default.hex}};
+  --m3-on-tertiary-container: {{colors.on_tertiary_container.default.hex}};
+  --m3-surface: {{colors.surface.default.hex}};
+  --m3-surface-container: {{colors.surface_container.default.hex}};
+  --m3-surface-container-high: {{colors.surface_container_high.default.hex}};
+  --m3-on-surface: {{colors.on_surface.default.hex}};
+  --m3-on-surface-variant: {{colors.on_surface_variant.default.hex}};
+  --m3-outline: {{colors.outline.default.hex}};
+  --m3-outline-variant: {{colors.outline_variant.default.hex}};
+  --m3-error: {{colors.error.default.hex}};
+
+  /* Translucent surfaces (tweak the alpha to taste: 0 = clear, 1 = solid) */
+  --m3-surface-a30: rgba({{colors.surface.default.red}}, {{colors.surface.default.green}}, {{colors.surface.default.blue}}, 0.30);
+  --m3-surface-a50: rgba({{colors.surface.default.red}}, {{colors.surface.default.green}}, {{colors.surface.default.blue}}, 0.50);
+  --m3-surface-a75: rgba({{colors.surface.default.red}}, {{colors.surface.default.green}}, {{colors.surface.default.blue}}, 0.75);
+  --m3-container-a40: rgba({{colors.surface_container.default.red}}, {{colors.surface_container.default.green}}, {{colors.surface_container.default.blue}}, 0.40);
+  --m3-container-a60: rgba({{colors.surface_container.default.red}}, {{colors.surface_container.default.green}}, {{colors.surface_container.default.blue}}, 0.60);
+  --m3-container-high-a70: rgba({{colors.surface_container_high.default.red}}, {{colors.surface_container_high.default.green}}, {{colors.surface_container_high.default.blue}}, 0.70);
+  --m3-primary-a25: rgba({{colors.primary.default.red}}, {{colors.primary.default.green}}, {{colors.primary.default.blue}}, 0.25);
+  --m3-container-high-a94: rgba({{colors.surface_container_high.default.red}}, {{colors.surface_container_high.default.green}}, {{colors.surface_container_high.default.blue}}, 0.94);
+
+  /* Zen accent variables */
+  --zen-primary-color: var(--m3-primary) !important;
+  --zen-colors-primary: var(--m3-surface-a50) !important;
+  --zen-colors-secondary: var(--m3-container-a60) !important;
+  --zen-colors-tertiary: var(--m3-surface-a30) !important;
+  --zen-colors-border: var(--m3-outline-variant) !important;
+  --zen-colors-hover-bg: var(--m3-primary-a25) !important;
+  --zen-dialog-background: var(--m3-surface-container) !important;
+
+  /* Firefox chrome variables */
+  --toolbar-bgcolor: transparent !important;
+  --toolbar-color: var(--m3-on-surface) !important;
+  --toolbar-field-background-color: var(--m3-container-a60) !important;
+  --toolbar-field-focus-background-color: var(--m3-container-high-a70) !important;
+  --toolbar-field-color: var(--m3-on-surface) !important;
+  --toolbar-field-focus-color: var(--m3-on-surface) !important;
+  --toolbar-field-border-color: transparent !important;
+  --toolbar-field-focus-border-color: var(--m3-primary) !important;
+  --lwt-accent-color: transparent !important;
+  --lwt-text-color: var(--m3-on-surface) !important;
+  --tab-selected-bgcolor: var(--m3-container-high-a70) !important;
+  --tab-selected-textcolor: var(--m3-on-surface) !important;
+  --urlbar-box-bgcolor: var(--m3-container-a60) !important;
+  --urlbar-box-hover-bgcolor: var(--m3-container-high-a70) !important;
+  --urlbar-box-text-color: var(--m3-on-surface) !important;
+  --arrowpanel-background: var(--m3-surface-container) !important;
+  --arrowpanel-color: var(--m3-on-surface) !important;
+  --arrowpanel-border-color: var(--m3-outline-variant) !important;
+  --panel-background: var(--m3-surface-container) !important;
+  --panel-color: var(--m3-on-surface) !important;
+  --sidebar-background-color: transparent !important;
+  --sidebar-text-color: var(--m3-on-surface) !important;
+  --focus-outline-color: var(--m3-primary) !important;
+  --button-primary-bgcolor: var(--m3-primary) !important;
+  --button-primary-color: var(--m3-on-primary) !important;
+}
+
+/* ---- Transparency ---- */
+:root,
+#main-window,
+#browser,
+#appcontent,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+#zen-main-app-wrapper,
+#navigator-toolbox,
+#nav-bar,
+#TabsToolbar,
+#titlebar,
+#zen-sidebar-top-buttons,
+#zen-tabbox-wrapper,
+#zen-appcontent-wrapper {
+  background: transparent !important;
+  background-color: transparent !important;
+  appearance: none !important;
+}
+
+/* Zen's own wallpaper/gradient layer */
+#zen-main-app-wrapper,
+#tabbrowser-tabpanels,
+:root[zen-single-toolbar="true"] #nav-bar {
+  --zen-main-browser-background: transparent !important;
+  --zen-main-browser-background-toolbar: transparent !important;
+  background: transparent !important;
+}
+
+/* Web content panel: faint tint so text stays readable over the blur */
+/* One tint layer per page. Painting both .browserSidebarContainer and the .browserContainer
+   inside it (and any split/glance panels) stacked several boxes with different edges. */
+.browserSidebarContainer {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.browserContainer {
+  background-color: var(--m3-surface-a30) !important;
+  border-radius: 12px !important;
+}
+
+/* Zen's dark wallpaper overlays (the default "black" behind everything):
+   replace with one even theme-coloured wash across the whole window. */
+#zen-browser-background::before {
+  background: var(--m3-surface-a30) !important;
+  background-image: none !important;
+}
+#zen-browser-background::after {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* ---- Tabs ---- */
+.tabbrowser-tab .tab-background {
+  background: transparent !important;
+  border: none !important;
+}
+.tabbrowser-tab:hover .tab-background:not([selected]) {
+  background: var(--m3-primary-a25) !important;
+}
+.tabbrowser-tab[selected] .tab-background,
+.tabbrowser-tab[visuallyselected] .tab-background {
+  background: var(--m3-container-high-a70) !important;
+  box-shadow: inset 0 0 0 1px var(--m3-outline-variant) !important;
+}
+.tabbrowser-tab[selected] .tab-label,
+.tabbrowser-tab[selected] .tab-icon-stack {
+  color: var(--m3-on-surface) !important;
+}
+.tab-label { color: var(--m3-on-surface-variant) !important; }
+
+/* ---- URL bar & popups ---- */
+#urlbar-background {
+  background: var(--m3-container-a60) !important;
+  border: 1px solid var(--m3-outline-variant) !important;
+}
+#urlbar[focused="true"] > #urlbar-background,
+#urlbar[open] > #urlbar-background {
+  background: var(--m3-container-high-a70) !important;
+  border-color: var(--m3-primary) !important;
+}
+#urlbar-input, .urlbarView-title, .urlbarView-url { color: var(--m3-on-surface) !important; }
+.urlbarView-row[selected] > .urlbarView-row-inner {
+  background: var(--m3-primary-a25) !important;
+}
+
+/* ---- Menus / panels ---- */
+menupopup, panel, .panel-arrowcontent {
+  --panel-background: var(--m3-surface-container) !important;
+  --panel-color: var(--m3-on-surface) !important;
+  --panel-border-color: var(--m3-outline-variant) !important;
+}
+menuitem:hover, menu:hover, .subviewbutton:hover {
+  background-color: var(--m3-primary-a25) !important;
+}
+
+/* ---- Toolbar icons ---- */
+toolbarbutton, .toolbarbutton-1 { color: var(--m3-on-surface-variant) !important; }
+toolbarbutton:hover { background-color: transparent !important; }
+
+/* ---- Spaces / workspace indicator ---- */
+.zen-workspace-tab-icon, #zen-workspaces-button { color: var(--m3-primary) !important; }
+
+/* ---- Compact mode & glance polish ---- */
+#zen-sidebar-splitter { opacity: 0 !important; }
+
+/* ---- Compact mode sidebar: 12px corners ---- */
+:root {
+  --zen-border-radius: 12px !important;
+}
+/* Colour only the outer box; make every Zen background layer inside it see-through. */
+:root[zen-compact-mode="true"] {
+  --zen-toolbar-element-bg: var(--m3-container-high-a70) !important;
+  --zen-themed-toolbar-bg: transparent !important;
+  --zen-themed-toolbar-bg-transparent: transparent !important;
+  --zen-main-browser-background: transparent !important;
+  --zen-main-browser-background-toolbar: transparent !important;
+  --zen-colors-primary: transparent !important;
+}
+:root[zen-compact-mode="true"] #navigator-toolbox {
+  background: var(--m3-container-high-a94) !important;
+  background-image: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+/* Zen's own sidebar background layers (the "black" one) */
+:root[zen-compact-mode="true"] .zen-toolbar-background,
+:root[zen-compact-mode="true"] .zen-toolbar-background::before,
+:root[zen-compact-mode="true"] .zen-toolbar-background::after,
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) #navigator-toolbox:not([animate="true"]) #titlebar::before,
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) #navigator-toolbox:not([animate="true"]) #titlebar::after,
+:root[zen-compact-mode="true"] #navigator-toolbox::before,
+:root[zen-compact-mode="true"] #navigator-toolbox::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 12px !important;
+}
+:root[zen-compact-mode="true"] #navigator-toolbox > *,
+:root[zen-compact-mode="true"] #zen-sidebar-top-buttons,
+:root[zen-compact-mode="true"] #zen-sidebar-bottom-buttons,
+:root[zen-compact-mode="true"] #zen-tabs-wrapper,
+:root[zen-compact-mode="true"] #tabbrowser-tabs,
+:root[zen-compact-mode="true"] #zen-appcontent-navbar-container,
+:root[zen-compact-mode="true"] #zen-sidebar-icons-wrapper,
+:root[zen-compact-mode="true"] #titlebar {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Single-box guarantee: only #navigator-toolbox is painted; every wrapper inside is clear,
+   and nothing may poke out past its rounded edge. */
+:root[zen-compact-mode="true"] {
+  --zen-toolbar-element-bg: var(--m3-container-a60) !important;
+}
+:root[zen-compact-mode="true"] #navigator-toolbox {
+  box-sizing: border-box !important;
+  clip-path: inset(0 round 12px) !important;
+}
+:root[zen-compact-mode="true"] #navigator-toolbox :is(toolbar, toolbaritem, hbox, vbox, box, stack, scrollbox, arrowscrollbox, #titlebar, #nav-bar, #TabsToolbar, #PersonalToolbar, #zen-sidebar-top-buttons, #zen-sidebar-foot-buttons, #zen-sidebar-bottom-buttons, #zen-tabs-wrapper, #tabbrowser-tabs, #zen-essentials, #zen-essentials-container, #zen-current-workspace-indicator, zen-workspace, .zen-workspace-tabs-section, .zen-toolbar-background):not(.tab-background):not(.tabbrowser-tab):not(.tab-stack):not(.tab-content) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+:root[zen-compact-mode="true"] :is(#zen-appcontent-navbar-wrapper, #zen-appcontent-navbar-container, #zen-sidebar-splitter, #zen-sidebar-web-panel-splitter) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+:root[zen-compact-mode="true"] #zen-sidebar-splitter,
+:root[zen-compact-mode="true"] #zen-sidebar-web-panel-splitter {
+  opacity: 0 !important;
+}
+
+/* Pseudo-element layers, borders and outlines that can draw a second edge */
+:root[zen-compact-mode="true"] :is(#navigator-toolbox > *, #titlebar, #zen-sidebar-top-buttons, #zen-sidebar-foot-buttons, #zen-sidebar-bottom-buttons, #zen-tabs-wrapper, #nav-bar, #TabsToolbar, toolbar)::before,
+:root[zen-compact-mode="true"] :is(#navigator-toolbox > *, #titlebar, #zen-sidebar-top-buttons, #zen-sidebar-foot-buttons, #zen-sidebar-bottom-buttons, #zen-tabs-wrapper, #nav-bar, #TabsToolbar, toolbar)::after {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+:root[zen-compact-mode="true"] :is(#navigator-toolbox > *, #titlebar, #zen-tabs-wrapper, #nav-bar, #TabsToolbar) {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* One edge only: remove Zen's own border colour in compact mode and every inner border,
+   then draw a single inset edge on the outer box. */
+:root[zen-compact-mode="true"] {
+  --zen-colors-border: transparent !important;
+  --zen-border-color: transparent !important;
+}
+:root[zen-compact-mode="true"] #navigator-toolbox :is(toolbar, toolbaritem, hbox, vbox, box, stack, scrollbox, arrowscrollbox, div, #titlebar, #nav-bar, #TabsToolbar, #zen-sidebar-top-buttons, #zen-sidebar-foot-buttons, #zen-sidebar-bottom-buttons, #zen-tabs-wrapper, #tabbrowser-tabs, zen-workspace):not(.tab-background):not(.tab-stack):not(.tab-content):not(.urlbar-background):not(#urlbar-background) {
+  border: none !important;
+  border-image: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+:root[zen-compact-mode="true"] #navigator-toolbox {
+  box-shadow: inset 0 0 0 1px var(--m3-outline-variant) !important;
+}
+
+/* The inner "second edge": #zen-toolbar-background is a separate rounded box sitting 8px inside
+   #navigator-toolbox, and its ::before/::after squircle layers carry an outline. Remove them
+   outright. (Doubled :root raises specificity above Zen's own rule.) */
+:root:root[zen-compact-mode="true"] #navigator-toolbox #zen-toolbar-background,
+:root:root[zen-compact-mode="true"] #navigator-toolbox .zen-toolbar-background {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+:root:root[zen-compact-mode="true"] #navigator-toolbox #zen-toolbar-background::before,
+:root:root[zen-compact-mode="true"] #navigator-toolbox #zen-toolbar-background::after,
+:root:root[zen-compact-mode="true"] #navigator-toolbox .zen-toolbar-background::before,
+:root:root[zen-compact-mode="true"] #navigator-toolbox .zen-toolbar-background::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  outline: 0 none transparent !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ---- Compact sidebar: paint Zen's inner card, not the padded toolbox ----
+   Your compact-mode scan: the toolbox is position:fixed at left:-4px with 8px side padding, so the
+   inner card #zen-toolbar-background sits at x4..191 when shown: already 4px from the screen edge.
+   Zen hides the sidebar with the `translate` property (calc(-100% + 9px)), so DO NOT override
+   `translate` here or the show/hide animation breaks.
+   Painting the toolbox itself bled 4px off the left edge and left 5px visible when hidden.
+   The extra :root repeats and #browser raise specificity above the earlier "hammer" rules. */
+:root:root[zen-compact-mode="true"] #navigator-toolbox {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+:root:root:root:root:root:root:root[zen-compact-mode="true"] #browser #navigator-toolbox #zen-toolbar-background {
+  background: var(--m3-container-high-a94) !important;
+  background-color: var(--m3-container-high-a94) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  box-shadow: inset 0 0 0 1px var(--m3-outline-variant) !important;
+}
+
+/* ---- Toolbar & sidebar buttons (back, forward, refresh, workspaces, new tab…) ---- */
+:root {
+  --toolbarbutton-icon-fill: var(--m3-on-surface-variant) !important;
+  --toolbarbutton-icon-fill-attention: var(--m3-primary) !important;
+  --toolbarbutton-hover-background: var(--m3-primary-a25) !important;
+  --toolbarbutton-active-background: var(--m3-primary-a25) !important;
+  --toolbarbutton-hover-bordercolor: transparent !important;
+  --toolbarbutton-border-radius: 10px !important;
+}
+
+#back-button, #forward-button, #reload-button, #stop-button,
+#unified-extensions-button, #PanelUI-button, #zen-sidebar-toggle-button,
+#zen-workspaces-button, .zen-workspace-button, #zen-sidebar-icons-wrapper toolbarbutton,
+#zen-sidebar-bottom-buttons toolbarbutton, #zen-sidebar-top-buttons toolbarbutton,
+#tabs-newtab-button, .tabs-newtab-button, #nav-bar toolbarbutton {
+  color: var(--m3-on-surface-variant) !important;
+  fill: var(--m3-on-surface-variant) !important;
+  -moz-context-properties: fill, fill-opacity, stroke !important;
+}
+
+:is(#back-button, #forward-button, #reload-button, #stop-button, #unified-extensions-button,
+    #PanelUI-button, #zen-sidebar-toggle-button, #zen-workspaces-button, .zen-workspace-button,
+    #tabs-newtab-button, .tabs-newtab-button, #nav-bar toolbarbutton) > .toolbarbutton-icon,
+:is(#zen-sidebar-icons-wrapper, #zen-sidebar-bottom-buttons, #zen-sidebar-top-buttons) toolbarbutton .toolbarbutton-icon {
+  fill: var(--m3-on-surface-variant) !important;
+  color: var(--m3-on-surface-variant) !important;
+}
+
+/* ---- Colourful buttons: icon colour only, no backgrounds ---- */
+:root {
+  --toolbarbutton-hover-background: transparent !important;
+  --toolbarbutton-active-background: transparent !important;
+  --toolbarbutton-selected-bgcolor: transparent !important;
+}
+
+/* Primary: back, forward, main menu, new tab */
+:root :is(#back-button, #forward-button, #PanelUI-button, #tabs-newtab-button, .tabs-newtab-button),
+:root :is(#back-button, #forward-button, #PanelUI-button, #tabs-newtab-button, .tabs-newtab-button) > .toolbarbutton-icon {
+  background: transparent !important;
+  color: var(--m3-primary) !important;
+  fill: var(--m3-primary) !important;
+}
+
+/* Secondary: refresh, stop, sidebar toggle */
+:root :is(#reload-button, #stop-button, #zen-sidebar-toggle-button),
+:root :is(#reload-button, #stop-button, #zen-sidebar-toggle-button) > .toolbarbutton-icon {
+  background: transparent !important;
+  color: var(--m3-secondary) !important;
+  fill: var(--m3-secondary) !important;
+}
+
+/* Tertiary: extensions, workspaces */
+:root :is(#unified-extensions-button, #zen-workspaces-button, .zen-workspace-button),
+:root :is(#unified-extensions-button, #zen-workspaces-button, .zen-workspace-button) > .toolbarbutton-icon {
+  background: transparent !important;
+  color: var(--m3-tertiary) !important;
+  fill: var(--m3-tertiary) !important;
+}
+
+/* Hover/press feedback without a background */
+:root :is(#nav-bar toolbarbutton, #zen-sidebar-icons-wrapper toolbarbutton, #zen-sidebar-top-buttons toolbarbutton,
+          #zen-sidebar-bottom-buttons toolbarbutton, #tabs-newtab-button, .tabs-newtab-button):hover > .toolbarbutton-icon {
+  filter: brightness(1.3) !important;
+}
+:root :is(#nav-bar toolbarbutton, #zen-sidebar-icons-wrapper toolbarbutton, #tabs-newtab-button, .tabs-newtab-button):active > .toolbarbutton-icon {
+  opacity: 0.7 !important;
+}
+
+/* ---- New tab / URL bar dropdown (the command-bar style popup) ---- */
+:root {
+  --zen-urlbar-background: var(--m3-surface-container) !important;
+  --urlbar-box-bgcolor: var(--m3-container-high-a70) !important;
+}
+#urlbar[open] .urlbarView,
+#urlbar[zen-floating-urlbar] .urlbarView,
+.urlbarView,
+.urlbarView-body-outer,
+.urlbarView-body-inner,
+#urlbar-results {
+  background: var(--m3-surface-container) !important;
+  background-color: var(--m3-surface-container) !important;
+  color: var(--m3-on-surface) !important;
+  border-radius: 12px !important;
+}
+#urlbar[zen-floating-urlbar] > #urlbar-background,
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  background: var(--m3-surface-container) !important;
+  border: 1px solid var(--m3-outline-variant) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+}
+.urlbarView-row { border-radius: 8px !important; color: var(--m3-on-surface) !important; }
+.urlbarView-row:hover > .urlbarView-row-inner { background: var(--m3-primary-a25) !important; }
+.urlbarView-row[selected] > .urlbarView-row-inner {
+  background: var(--m3-primary-container) !important;
+  color: var(--m3-on-primary-container) !important;
+}
+.urlbarView-row[selected] .urlbarView-title,
+.urlbarView-row[selected] .urlbarView-url { color: var(--m3-on-primary-container) !important; }
+.urlbarView-action, .urlbarView-title-separator::before { color: var(--m3-primary) !important; }
+.search-one-offs, .urlbarView-search-one-offs { background: transparent !important; }
+.searchbar-engine-one-off-item[selected], .searchbar-engine-one-off-item:hover {
+  background: var(--m3-secondary-container) !important;
+}
+
+/* ---- Whole new-tab bar: every layer painted the same solid colour, so no black can show ---- */
+:root {
+  --zen-urlbar-background: var(--m3-surface-container) !important;
+  --zen-toolbar-element-bg: var(--m3-surface-container) !important;
+  --urlbar-box-bgcolor: var(--m3-surface-container) !important;
+  --urlbar-box-hover-bgcolor: var(--m3-surface-container-high) !important;
+  --urlbar-box-focus-bgcolor: var(--m3-surface-container) !important;
+  --toolbar-field-background-color: var(--m3-surface-container) !important;
+  --toolbar-field-focus-background-color: var(--m3-surface-container) !important;
+}
+:is(#urlbar[zen-floating-urlbar], #urlbar[breakout][breakout-extend], #urlbar[open]) {
+  background: var(--m3-surface-container) !important;
+  background-color: var(--m3-surface-container) !important;
+  color: var(--m3-on-surface) !important;
+  border-radius: 12px !important;
+  --toolbar-field-background-color: var(--m3-surface-container) !important;
+  --toolbar-field-focus-background-color: var(--m3-surface-container) !important;
+  --urlbar-box-bgcolor: var(--m3-surface-container) !important;
+}
+:is(#urlbar[zen-floating-urlbar], #urlbar[breakout][breakout-extend]) > :is(#urlbar-background, .urlbar-background) {
+  background: var(--m3-surface-container) !important;
+  background-color: var(--m3-surface-container) !important;
+  border: 1px solid var(--m3-outline-variant) !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+}
+:is(#urlbar[zen-floating-urlbar], #urlbar[breakout][breakout-extend]) :is(#urlbar-input-container, .urlbar-input-container, #urlbar-container, .urlbarView, .urlbarView-body-outer, .urlbarView-body-inner, .urlbarView-results, #urlbar-results, .search-one-offs, .urlbarView-search-one-offs) {
+  background: var(--m3-surface-container) !important;
+  background-color: var(--m3-surface-container) !important;
+  color: var(--m3-on-surface) !important;
+}
+:is(#urlbar[zen-floating-urlbar], #urlbar[breakout][breakout-extend]) :is(.urlbarView, .urlbarView-body-outer) {
+  border-radius: 0 0 12px 12px !important;
+}
+#urlbar-container:has(#urlbar[zen-floating-urlbar]),
+#urlbar-container:has(#urlbar[breakout-extend]) {
+  background: transparent !important;
+}
+#urlbar[breakout][breakout-extend] #urlbar-input,
+#urlbar[zen-floating-urlbar] #urlbar-input {
+  color: var(--m3-on-surface) !important;
+  caret-color: var(--m3-primary) !important;
+}
+#urlbar[breakout][breakout-extend] #urlbar-input::placeholder { color: var(--m3-on-surface-variant) !important; }
+#urlbar[breakout][breakout-extend] :is(.urlbar-page-action, #identity-box, #urlbar-go-button, .searchmode-switcher) {
+  background: transparent !important;
+  fill: var(--m3-primary) !important;
+  color: var(--m3-primary) !important;
+}
+
+/* Disabled buttons (e.g. forward with no history) */
+toolbarbutton[disabled="true"] { opacity: 0.4 !important; }
+
+/* Workspace switcher dots/icons */
+.zen-workspace-button[active="true"],
+#zen-workspaces-button[active="true"] {
+  color: var(--m3-primary) !important;
+  fill: var(--m3-primary) !important;
+}
+
+/* ---- Bookmarks toolbar: colourful text and icons, no backgrounds ---- */
+#PersonalToolbar {
+  background: transparent !important;
+}
+#PersonalToolbar .bookmark-item,
+#PersonalToolbar #PlacesToolbarItems > toolbarbutton {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--m3-on-surface) !important;
+  transition: filter 120ms ease !important;
+}
+#PersonalToolbar .bookmark-item .toolbarbutton-text {
+  color: inherit !important;
+  font-weight: 500 !important;
+}
+#PersonalToolbar .bookmark-item .toolbarbutton-icon {
+  fill: currentColor !important;
+  -moz-context-properties: fill, fill-opacity !important;
+}
+
+/* Cycle through the palette so neighbouring bookmarks differ */
+#PersonalToolbar #PlacesToolbarItems > toolbarbutton:nth-child(3n+1) { color: var(--m3-primary) !important; }
+#PersonalToolbar #PlacesToolbarItems > toolbarbutton:nth-child(3n+2) { color: var(--m3-secondary) !important; }
+#PersonalToolbar #PlacesToolbarItems > toolbarbutton:nth-child(3n)   { color: var(--m3-tertiary) !important; }
+
+/* Hover: brighten, no fill */
+#PersonalToolbar #PlacesToolbarItems > toolbarbutton:hover {
+  background: transparent !important;
+  filter: brightness(1.3) !important;
+}
+
+/* Folder / overflow chevron */
+#PersonalToolbar #PlacesChevron,
+#PersonalToolbar #OtherBookmarks {
+  color: var(--m3-on-surface-variant) !important;
+  fill: var(--m3-on-surface-variant) !important;
+}
+
+/* Bookmark menus & panels */
+#PlacesToolbar menupopup, #BMB_bookmarksPopup, menupopup[placespopup="true"] {
+  --panel-background: var(--m3-surface-container) !important;
+  --panel-color: var(--m3-on-surface) !important;
+}
+menupopup[placespopup="true"] menuitem, menupopup[placespopup="true"] menu {
+  color: var(--m3-on-surface) !important;
+  border-radius: 8px !important;
+}
+menupopup[placespopup="true"] menuitem[_moz-menuactive="true"],
+menupopup[placespopup="true"] menu[_moz-menuactive="true"] {
+  background-color: var(--m3-primary-a25) !important;
+  color: var(--m3-primary) !important;
+}

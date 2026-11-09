@@ -64,7 +64,7 @@
 /kitty/current-theme.conf
 /zen/*
 !/zen/user.js
-!/zen/symlink-userjs.sh
+!/zen/symlink.sh
 /zathura
 /yazi/flavors/noctalia.yazi
 /rmpc/themes
