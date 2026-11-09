@@ -1,0 +1,47 @@
+// Non-device specific input settings
+input {
+    touch {
+        map-to-output "eDP-1"
+    }
+    keyboard {
+        xkb {
+            options "caps:escape"
+        }
+    }
+    touchpad {
+        scroll-factor 0.5
+        tap
+        natural-scroll
+    }
+    mouse {
+        accel-profile "flat"
+        accel-speed -0.15
+    }
+    disable-power-key-handling
+    focus-follows-mouse max-scroll-amount="30%"
+}
+
+switch-events {
+    lid-close                           {spawn "systemctl" "suspend-then-hibernate";}
+}
+
+gestures {
+    dnd-edge-view-scroll {
+        delay-ms 150
+        max-speed 2000
+        trigger-width 20
+    }
+    dnd-edge-workspace-switch {
+        trigger-height 100
+        max-speed 3000
+        delay-ms 200
+    }
+    hot-corners {
+        off
+    }
+}
+
+clipboard {
+    disable-primary
+}
+

@@ -1,0 +1,31 @@
+binds {
+ 
+    Mod+A       hotkey-overlay-title="Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+V       hotkey-overlay-title="Clipboard History" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Mod+N       hotkey-overlay-title="Notifications"{ spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications"; }
+
+    Mod+U       hotkey-overlay-title="Control Center"{ spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+    Mod+W       hotkey-overlay-title="Control Center"{ spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
+    Mod+CTRL+Q  hotkey-overlay-title="Session Options"{ spawn "noctalia" "msg" "panel-toggle" "session"; }
+    MOD+XF86PowerOff                    hotkey-overlay-title=null { spawn "noctalia" "msg" "panel-toggle" "session"; }
+
+    Mod+SHIFT+Q hotkey-overlay-title="Lock" { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+Comma   hotkey-overlay-title="Settings"{ spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+Z   hotkey-overlay-title="Toggle Bars" { spawn "noctalia" "msg" "bar-toggle"; }
+    Mod+ALT+Z   hotkey-overlay-title="Peek Bar" { spawn "noctalia" "msg" "bar-show"; }
+
+    // Power
+    XF86PowerOff allow-when-locked=true {spawn "noctalia" "msg" "session" "lock-and-suspend";}
+    // Audio & Brightness
+    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down";  }
+    XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
+    SHIFT+XF86MonBrightnessUp { spawn "brightnessctl" "-d" "asus_screenpad" "set" "10%+"; }
+    SHIFT+XF86MonBrightnessDown { spawn "brightnessctl" "-d" "asus_screenpad" "set" "10%-"; }
+    XF86AudioNext       allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPrev       allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+    XF86AudioPause      allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPlay       allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+}

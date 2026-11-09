@@ -1,0 +1,5 @@
+// Startup programs
+spawn-at-startup "awww-daemon"
+spawn-at-startup "udiskie"
+spawn-at-startup "noctalia"
+

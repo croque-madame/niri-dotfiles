@@ -1,0 +1,19 @@
+include "startup.kdl"
+include "input.kdl"
+include "binds.kdl"
+include "layout.kdl"
+include "appearance.kdl"
+include "window-rules.kdl"
+include "env-vars.kdl"
+
+// Not stored on git, device specific settings
+include "per-device/locale.kdl"
+include "per-device/named-workspaces.kdl"
+include "per-device/outputs.kdl"
+
+// Noctalia includes
+include "noctalia/binds.kdl"
+include "noctalia.kdl"
+
+// General Settings
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
