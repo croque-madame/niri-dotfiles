@@ -56,11 +56,12 @@
    > noctalia supports wallpapers without the need for a dedicated wallpaper daemon, but this uses awww because it supports gifs
    > awww is not on the arch repos. If using arch repos, use awww-bin from AUR
 
-5. Enable zsh and symlink zshrc
+5. Enable zsh and symlink zshrc, p10k
 
    ```
    chsh -s /bin/zsh
    ln -s ~/.config/zshrc ~/.zshrc
+   ln -s ~/.config/p10k/p10k.zsh ~/.p10k.zsh
    ```
 
 6. Install AUR packages with paru
