@@ -1,0 +1,7 @@
+[theme.templates.user.spicetify_marketplace]
+input_path = 'templates/spicetify.ini'
+output_path = '$XDG_CONFIG_HOME/spicetify/Themes/marketplace/color.ini'
+
+[theme.templates.user.zathura]
+input_path = "templates/zathura"
+output_path = '$XDG_CONFIG_HOME/zathura/zathurarc'

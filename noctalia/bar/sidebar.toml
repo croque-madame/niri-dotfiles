@@ -1,0 +1,31 @@
+[bar.sidebar]
+enabled = false
+background_opacity = 0.44999998994171619
+capsule_fill = "on_primary"
+capsule_opacity = 0.39999999105930328
+capsule_radius = 12
+center = ["audio_visualizer", "media", "spacer_20px", "workspaces"]
+end = ["tray", "group:g1", "launcher", "session"]
+font_weight = 400
+margin_edge = 0
+margin_ends = 160
+panel_overlap = 0
+radius = 12
+scale = 0.90000000000000002
+start = ["weather", "clock"]
+position = "right"
+smart_auto_hide = true
+reserve_space = false
+
+[[bar.sidebar.capsule_group]]
+border = "on_primary"
+fill = "primary"
+foreground = "on_primary"
+id = "g1"
+members = ["notifications", "network", "bluetooth", "volume", "battery"]
+opacity = 1.0
+padding = 6.0
+radius = 12.0
+
+[bar.sidebar.dead_zone.actions]
+left = "panel-toggle control-center home"

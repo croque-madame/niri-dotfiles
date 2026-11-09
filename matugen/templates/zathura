@@ -1,0 +1,48 @@
+" Colors
+set default-bg              "{{colors.background.default.rgba | set_alpha: 0.6}}"
+set default-fg              "{{colors.on_surface.default.hex}}"
+
+set statusbar-bg            "{{colors.on_primary.default.hex}}"
+set statusbar-fg            "{{colors.primary.default.hex}}"
+
+set inputbar-bg             "{{colors.on_primary.default.hex}}"
+set inputbar-fg             "{{colors.primary.default.hex}}"
+
+set notification-error-bg   "{{colors.on_error.default.hex}}"
+set notification-error-fg   "{{colors.error.default.hex}}"
+
+set notification-warning-bg "{{colors.primary_fixed.default.hex}}"
+set notification-warning-fg "{{colors.error_container.default.hex}}"
+
+set highlight-color         "{{colors.primary.default.rgba | set_alpha: 0.3}}"
+set highlight-active-color  "{{colors.primary.default.rgba | set_alpha: 0.5}}"
+set highlight-fg            "{{colors.on_surface.default.hex}}"
+
+set completion-highlight-fg "{{colors.on_primary.default.hex}}"
+set completion-highlight-bg {{colors.primary.default.hex}}""
+
+set completion-bg           "{{colors.on_primary.default.hex}}"
+set completion-fg           "{{colors.primary.default.hex}}"
+
+set notification-bg         "{{colors.on_primary.default.hex}}"
+set notification-fg         "{{colors.primary.default.hex}}"
+
+set recolor                 "true"
+set recolor-lightcolor      "{{colors.surface.default.rgba | set_alpha: 1}}"
+set recolor-darkcolor       "{{colors.on_surface.default.hex}}"
+set recolor-reverse-video   "true"
+set recolor-keephue         "true"
+
+" Search
+set incremental-search true
+set search-hadjust true
+
+" Autoadjust
+set adjust-open width
+
+" Typography
+set font "Maple Mono 12"
+
+set guioptions none
+map [normal]     i set recolor
+map [fullscreen] i set recolor

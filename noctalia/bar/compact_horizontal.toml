@@ -1,0 +1,43 @@
+[bar.compact_horibar]
+enabled = true
+thickness = 28
+background_opacity = 0.4
+capsule_fill = "on_primary"
+capsule_opacity = 0.4
+capsule_radius = 12
+start = ["clock", "spacer_20px", "date"]
+center = ["media"]
+end = ["group:infos"]
+font_weight = 400
+margin_edge = 0
+margin_ends = 600
+panel_overlap = 0
+radius = 12
+scale = 0.9
+position = "top"
+smart_auto_hide = true
+reserve_space = false
+radius_top_left = 12
+radius_top_right = 12
+show_on_workspace_switch = false
+
+[[bar.compact_horibar.capsule_group]]
+fill = "primary"
+foreground = "on_surface"
+id = "infos"
+members = [
+    "tray",
+    "notifications",
+    "network",
+    "bluetooth",
+    "volume",
+    "spacer_10px",
+    "battery",
+]
+opacity = 0.0
+padding = 5.0
+radius = 12.0
+
+[bar.compact_horibar.dead_zone.actions]
+left = "panel-toggle control-center home"
+right = "panel-open launcher"

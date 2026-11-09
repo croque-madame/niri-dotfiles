@@ -1,0 +1,78 @@
+
+[wallpaper]
+transition = ["disc"]
+directory = "~/.config/Wallpapers"
+transition_duration = 800
+enabled = false
+
+[[wallpaper.favorite]]
+builtin_palette = "Nord"
+palette_source = "builtin"
+path = "~/.config/Wallpapers/dsirythyll.gif"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Rose Pine Moon"
+palette_source = "community"
+path = "~/.config/Wallpapers/twinmoons.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Everforest Alt"
+palette_source = "community"
+path = "~/.config/Wallpapers/frieren.jpeg"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Everforest Alt"
+palette_source = "community"
+path = "~/.config/Wallpapers/frierenforest.jpg"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Rose Pine Moon"
+palette_source = "community"
+path = "~/.config/Wallpapers/house.gif"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "GruvboxAlt"
+palette_source = "community"
+path = "~/.config/Wallpapers/makizenin.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Vesper"
+palette_source = "community"
+path = "~/.config/Wallpapers/sunset-lake.gif"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Kanagawa Paper"
+palette_source = "community"
+path = "~/.config/Wallpapers/mewmew.gif"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Kanagawa Kasumi"
+palette_source = "community"
+path = "~/.config/Wallpapers/traffic-rain.gif"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+community_palette = "Catppuccin Macchiato Pink"
+palette_source = "community"
+path = "~/.config/Wallpapers/powerpoles.gif"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "~/.config/Wallpapers/orion-spur.gif"
+theme_mode = "dark"
+wallpaper_scheme = "m3-content"
+
+[[wallpaper.favorite]]
+palette_source = "builtin"
+builtin_palette = "Tokyo-Night"
+path = "~/.config/Wallpapers/orbits.gif"
+theme_mode = "dark"

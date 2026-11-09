@@ -1,0 +1,7 @@
+[lockscreen]
+transition = ["disc"]
+transition_duration = 300
+edge_smoothness = 0.0
+
+blurred_desktop = true
+blur_intensity = 0.8

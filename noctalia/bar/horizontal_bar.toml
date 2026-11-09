@@ -1,0 +1,44 @@
+[bar.horibar]
+enabled = false
+thickness = 28
+background_opacity = 0.4
+capsule_fill = "on_primary"
+capsule_opacity = 0.4
+capsule_radius = 12
+start = ["audio_visualizer", "media"]
+center = ["workspaces", "spacer_20px", "clock", "spacer_20px", "weather"]
+end = ["tray", "group:infos", "group:benchmark"]
+font_weight = 400
+margin_edge = 0
+margin_ends = 0
+panel_overlap = 0
+radius = 12
+scale = 0.9
+position = "top"
+smart_auto_hide = false
+reserve_space = true
+radius_top_left = 0
+radius_top_right = 0
+
+[[bar.horibar.capsule_group]]
+border = "on_primary"
+fill = "primary"
+foreground = "on_primary"
+id = "infos"
+members = ["notifications", "network", "bluetooth", "volume", "battery"]
+opacity = 1.0
+padding = 5.0
+radius = 12.0
+
+[[bar.horibar.capsule_group]]
+foreground = "on_surface"
+id = "benchmark"
+members = ["cpu", "ram"]
+opacity = 0
+padding = 5.0
+radius = 12.0
+
+
+[bar.horibar.dead_zone.actions]
+left = "panel-toggle control-center home"
+right = "panel-open launcher"

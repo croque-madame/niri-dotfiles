@@ -1,0 +1,65 @@
+[lockscreen_widgets.widget.poweroff]
+box_height = 48.0
+box_width = 48.0
+cx = 1880.0
+cy = 1032.0
+rotation = 0.0
+type = "button"
+output = "DP-1"
+
+[lockscreen_widgets.widget.poweroff.settings]
+background = false
+color = "error"
+command = "shutdown now"
+glyph = "power"
+hover_background = "error"
+variant = "default"
+
+[lockscreen_widgets.widget.suspend]
+box_height = 48.0
+box_width = 48.0
+cx = 1880.0
+cy = 980.0
+rotation = 0.0
+type = "button"
+output = "DP-1"
+
+[lockscreen_widgets.widget.suspend.settings]
+background = false
+color = "secondary"
+command = "systemctl suspend"
+glyph = "player-pause"
+variant = "default"
+
+[lockscreen_widgets.widget.hibernate]
+box_height = 48.0
+box_width = 48.0
+cx = 1832.0
+cy = 980.0
+rotation = 0.0
+type = "button"
+output = "DP-1"
+
+[lockscreen_widgets.widget.hibernate.settings]
+background = false
+color = "primary"
+command = "systemctl hibernate"
+glyph = "hibernate"
+variant = "default"
+
+[lockscreen_widgets.widget.reboot]
+box_height = 48.0
+box_width = 48.0
+cx = 1832.0
+cy = 1032.0
+rotation = 0.0
+type = "button"
+output = "DP-1"
+
+[lockscreen_widgets.widget.reboot.settings]
+background = false
+color = "tertiary"
+command = "reboot"
+glyph = "reboot"
+hover_background = "error"
+variant = "default"

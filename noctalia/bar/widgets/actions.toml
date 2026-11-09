@@ -1,0 +1,8 @@
+# For custom widget click actions attributed to any/all widget styles
+
+[widget.media.actions]
+scroll_down = "media next"
+scroll_left = "media previous"
+scroll_right = "media next"
+scroll_up = "media previous"
+middle = "media next-player"

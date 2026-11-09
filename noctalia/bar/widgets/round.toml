@@ -1,0 +1,80 @@
+## material design style rounded widgets
+[widget.active_window]
+display = "icon_only"
+
+[widget.audio_visualizer]
+bands = 32
+capsule = false
+centered = false
+color_1 = "primary"
+color_2 = "primary"
+width = 120.0
+mirrored = false
+show_when_idle = true
+
+[widget.clock]
+anchor = true
+capsule = false
+capsule_fill = "primary"
+capsule_foreground = "on_primary"
+capsule_opacity = 1.0
+font_weight = 900
+format = "{:%H:%M}"
+vertical_format = "{:%H\\n%M\\n-\\n%d\\n%m}"
+capsule_padding = 12
+
+[widget.media]
+max_length = 420
+title_scroll = "always"
+hide_when_no_media = true
+capsule = true
+
+[widget.network]
+show_label = false
+
+[widget.session]
+capsule_fill = "error"
+capsule_foreground = "on_error"
+
+[widget.spacer_20px]
+type = "spacer"
+
+[widget.spacer_30px]
+length = 30
+type = "spacer"
+
+[widget.spacer_10px]
+length = 10
+type = "spacer"
+
+[widget.tray]
+detached_panel = false
+hide_passive = false
+drawer = true
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+capsule_border = "on_primary"
+capsule_fill = "primary"
+capsule_foreground = "on_primary"
+show_condition = false
+
+[widget.workspaces]
+label_source = "name"
+occupied_color = "secondary"
+show_labels = true
+style = "minimal"
+
+[widget.cpu]
+visualization = "none"
+
+[widget.ram]
+stat = "ram_pct"
+visualization = "none"
+
+[widget.battery]
+display_mode = "graphic"
+scale = 0.6
+show_label = false

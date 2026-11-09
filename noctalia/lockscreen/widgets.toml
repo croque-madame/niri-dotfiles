@@ -1,0 +1,71 @@
+[include]
+files = ["session.toml", "login-boxes.toml"]
+
+[lockscreen_widgets]
+widget_order = [
+    "poweroff",
+    "suspend",
+    "hibernate",
+    "reboot",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-login-box@DP-2",
+    "lockscreen-login-box@HDMI-A-1",
+    "clock",
+    "date",
+    "weather",
+]
+
+[lockscreen_widgets.widget.clock]
+box_height = 240.0
+box_width = 512.0
+cx = 960.0
+cy = 452.0
+output = "DP-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "clock"
+
+[lockscreen_widgets.widget.clock.settings]
+background = false
+center_text = true
+clock_style = "digital"
+color = "primary"
+font_family = "C059"
+shadow = true
+
+[lockscreen_widgets.widget.date]
+box_height = 32.0
+box_width = 584.0
+cx = 960.0
+cy = 580.0
+output = "DP-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "clock"
+
+[lockscreen_widgets.widget.date.settings]
+background = false
+color = "on_surface_variant"
+font_family = ""
+format = "{:%A %d %B %Y}"
+shadow = false
+
+[lockscreen_widgets.widget.weather]
+box_height = 0.0
+box_width = 0.0
+cx = 150.0
+cy = 96.0
+output = "DP-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "weather"
+
+[lockscreen_widgets.widget.weather.settings]
+background = false
+color = "on_surface_variant"
+shadow = false
+show_forecast = false

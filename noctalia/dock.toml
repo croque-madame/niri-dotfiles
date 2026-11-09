@@ -1,0 +1,14 @@
+[dock]
+position = "right"
+background_opacity = 0.25
+cross_axis_padding = 4
+enabled = false
+icon_size = 36
+item_spacing = 4
+launcher_icon = "search"
+magnification_scale = 1.35
+main_axis_padding = 8
+pinned = ["steam", "spotify", "vesktop", "zen"]
+reserve_space = false
+show_dots = true
+smart_auto_hide = true

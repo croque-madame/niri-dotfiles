@@ -1,0 +1,9 @@
+[include]
+files = [
+    "sidebar.toml",
+    "horizontal_bar.toml",
+    "workspaces-sidebar.toml",
+    "widgets/round.toml",
+    "compact_horizontal.toml",
+    "widgets/actions.toml",
+]

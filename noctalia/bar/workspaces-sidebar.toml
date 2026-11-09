@@ -1,0 +1,11 @@
+[bar.workspaces-sidebar]
+background_opacity = 0.4
+center = ["workspaces"]
+enabled = false
+end = []
+margin_ends = 420
+position = "right"
+reserve_space = false
+smart_auto_hide = true
+start = []
+thickness = 24

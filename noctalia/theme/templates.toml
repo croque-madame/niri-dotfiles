@@ -1,0 +1,12 @@
+[theme.templates]
+builtin_ids = [
+    "btop",
+    "kitty",
+    "cava",
+    "gtk3",
+    "gtk4",
+    "qt",
+    "kcolorscheme",
+    "niri",
+]
+community_ids = ["obsidian", "discord", "steam", "yazi"]

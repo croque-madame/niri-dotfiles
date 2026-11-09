@@ -1,0 +1,93 @@
+[include]
+files = [
+    "bar/bars.toml",
+    "theme/templates.toml",
+    "theme/user_templates.toml",
+    "theme/wallpapers.toml",
+    "lockscreen/widgets.toml",
+    "lockscreen/appearance.toml",
+]
+
+[audio]
+enable_sounds = true
+enable_overdrive = true
+
+[control_center]
+sidebar_section = "none"
+
+[hooks]
+wallpaper_changed = "awww img $NOCTALIA_WALLPAPER_PATH --transition-fps=60 --transition-duration 1.2 --transition-type any"
+
+[idle]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 600
+
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = false
+timeout = 900
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 900
+
+[keybinds]
+cancel = ["Escape"]
+down = ["Down"]
+left = ["Left"]
+right = ["Right"]
+up = ["Up"]
+validate = ["Return"]
+
+[location]
+auto_locate = true
+
+[notification]
+background_opacity = 0.39999999105930328
+
+[osd]
+background_opacity = 0.39999999105930328
+position = "top_right"
+
+[shell]
+corner_radius_scale = 1.0
+font_family = "Maple Mono"
+niri_overview_type_to_launch_enabled = true
+password_style = "random"
+polkit_agent = true
+settings_show_advanced = true
+avatar_path = "~/.config/noctalia/pfp.png"
+
+[shell.launcher]
+category_icons_only = true
+app_grid = true
+layout = "simple"
+
+[shell.panel]
+borders = false
+launcher_placement = "attached"
+wallpaper_placement = "floating"
+open_near_click_control_center = true
+open_near_click_launcher = true
+open_near_click_session = true
+session_placement = "floating"
+open_near_click_wallpaper = true
+transparency_mode = "glass"
+wallpaper_show_names = false
+
+[shell.screen_corners]
+size = 12
+
+[shell.shadow]
+alpha = 0.34999999217689037
+
+[system.monitor]
+enabled = true
+
+[brightness]
+enable_ddcutil = true
