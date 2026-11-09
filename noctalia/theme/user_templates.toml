@@ -1,3 +1,16 @@
+[theme.templates.user.btop]
+input_path = 'templates/btop.theme'
+output_path = '$XDG_CONFIG_HOME/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+
+[theme.templates.user.spicetify_text]
+input_path = 'templates/spicetify.ini'
+output_path = '$XDG_CONFIG_HOME/spicetify/Themes/text/color.ini'
+
+[theme.templates.user.spicetify_sleek]
+input_path = 'templates/spicetify-sleek.ini'
+output_path = '$XDG_CONFIG_HOME/spicetify/Themes/Sleek/color.ini'
+
 [theme.templates.user.spicetify_marketplace]
 input_path = 'templates/spicetify.ini'
 output_path = '$XDG_CONFIG_HOME/spicetify/Themes/marketplace/color.ini'
