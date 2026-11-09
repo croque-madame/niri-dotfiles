@@ -5,3 +5,7 @@ output_path = '$XDG_CONFIG_HOME/spicetify/Themes/marketplace/color.ini'
 [theme.templates.user.zathura]
 input_path = "templates/zathura"
 output_path = '$XDG_CONFIG_HOME/zathura/zathurarc'
+
+[theme.templates.user.rmpc]
+input_path = '~/.config/matugen/templates/rmpc.ron'
+output_path = '~/.config/rmpc/themes/matugen.ron'
