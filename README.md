@@ -3,6 +3,7 @@
 ## Recommended Installation
 
 > These instructions are really just a note to self. Use with caution.
+> They are only for arch linux.
 
 1. Switch to cachyos repos and check if v3 or v4 supported
 
