@@ -57,8 +57,7 @@
         {
             "type": "packages",
             "key": "│ {#31}󰏖 pkgs    {#keys}│",
-            "format": "{all}",
-            "keyColor": "green"
+            "format": "{all}"
         },
         {
             "key": "│ {#32}󰇄 wm      {#keys}│",
