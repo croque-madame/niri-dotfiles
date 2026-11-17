@@ -1,6 +1,7 @@
 [include]
 files = [
     "bar/bars.toml",
+    "theme/theme.toml",
     "theme/templates.toml",
     "theme/user_templates.toml",
     "theme/wallpapers.toml",
