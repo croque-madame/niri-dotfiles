@@ -88,7 +88,7 @@ size = 12
 alpha = 0.34999999217689037
 
 [system.monitor]
-enabled = true
+enabled = false
 
 [brightness]
 enable_ddcutil = true
