@@ -3,7 +3,7 @@
 transition = ["disc"]
 directory = "~/.config/Wallpapers"
 transition_duration = 800
-enabled = false
+enabled = true
 
 [[wallpaper.favorite]]
 builtin_palette = "Nord"
