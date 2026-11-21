@@ -1,5 +1,6 @@
 [bar.compact_horibar]
 enabled = true
+layer = "auto"
 thickness = 28
 background_opacity = 0.4
 capsule_fill = "on_primary"
