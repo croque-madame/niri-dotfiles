@@ -1,5 +1,6 @@
 [mgr]
 linemode = "none"
+show_hidden = true
 
 [opener]
 play = [{ run = "mpv %s", orhpan = true }, { run = "vlc %S", orhpan = true }]
