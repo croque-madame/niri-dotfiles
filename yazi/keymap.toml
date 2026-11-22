@@ -1,8 +1,2 @@
 [mgr]
-prepend_keymap = [
-
-    { on = "<Enter>", run = "plugin smart-enter", desc = "Open file or enter directory" },
-    { on = "l", run = "plugin smart-enter", desc = "Open file or enter directory" },
-    { on = "?", run = "help", desc = "Open help" },
-    { on = "[", run = "cd --interactive", desc = "cd interactive" },
-]
+prepend_keymap = [{ on = "?", run = "help", desc = "Open help" }]

@@ -1,0 +1,10 @@
+[mgr]
+linemode = "none"
+
+[opener]
+play = [{ run = "mpv %s", orhpan = true }, { run = "vlc %S", orhpan = true }]
+
+[open]
+prepend_rules = []
+append_rules = []
+rules = [{ mime = "video/*", use = "play" }]
