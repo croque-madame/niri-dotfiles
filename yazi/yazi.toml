@@ -8,12 +8,20 @@ edit = [
     { run = "nvim %s", desc = "nvim", block = true },
     { run = "vim %s", desc = "vim", block = true },
 ]
+view = [
+    { run = "zathura %s", desc = "Zathura", orphan = true },
+    { run = "zen-browser %S", desc = "Zen Browser", orphan = true },
+    { run = "firefox %S", desc = "Firefox", orphan = true },
+]
+xdg-open = [{ run = "xdg-open %s", desc = "xdg-open" }]
 
 [open]
-prepend_rules = []
-append_rules = [
+prepend_rules = [
     { mime = "video/*", use = "play" },
     { mime = "text/*", use = "edit" },
     { mime = "inode/empty", use = "edit" },
+    { mime = "image/*", use = "view" },
+    { mime = "application/pdf", use = "view" },
 ]
+append_rules = [{ url = "*", use = "xdg-open" }]
 rules = []
