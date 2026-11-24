@@ -4,11 +4,6 @@ input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
 post_hook = 'pkill -USR2 btop || true'
 
-
-[templates.spicetify_text]
-input_path = '~/.config/matugen/templates/spicetify.ini'
-output_path = '~/.config/spicetify/Themes/text/color.ini'
-
 [templates.spicetify_sleek]
 input_path = '~/.config/matugen/templates/spicetify-sleek.ini'
 output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
