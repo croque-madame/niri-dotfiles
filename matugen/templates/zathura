@@ -44,5 +44,3 @@ set adjust-open width
 set font "Maple Mono 12"
 
 set guioptions none
-map [normal]     i set recolor
-map [fullscreen] i set recolor
