@@ -63,7 +63,7 @@ alias pq='pacman -Q'
 # pac query grep
 alias pacgrep='pacman -Q | grep'
 # use fzf to list packages, can be used to find unneeded pkges
-alias pkglist='pacman -Qetq | fzf -m --preview "pacman -Qi {}" | xargs -ro sudo pacman -Rns'
+alias pkglist='pacman -Qeq | fzf -m --preview "pacman -Qi {}" | xargs -ro sudo pacman -Rns'
 
 ## NetworkManager aliases
 wgadd() {
