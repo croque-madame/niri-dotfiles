@@ -29,3 +29,12 @@ vim.keymap.set("x", "p", [["_dP]])
 
 -- Disable Ctrl-z suspend
 vim.keymap.set({ "n", "v", "i" }, "<C-z>", "<Nop>", { silent = true })
+
+-- Swap gj/gk; j/k
+vim.keymap.del({ "n", "x" }, "j")
+vim.keymap.del({ "n", "x" }, "k")
+
+vim.keymap.set({ "n", "x" }, "gj", "gj", { desc = "Down (display line)" })
+vim.keymap.set({ "n", "x" }, "gk", "gk", { desc = "Up (display line)" })
+vim.keymap.set({ "n", "x" }, "j", "j", { desc = "Down" })
+vim.keymap.set({ "n", "x" }, "k", "k", { desc = "Up" })
