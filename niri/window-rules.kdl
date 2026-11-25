@@ -18,7 +18,8 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="nvim"
+    match app-id="^Unity"
+    open-focused false
 }
 
 window-rule {
