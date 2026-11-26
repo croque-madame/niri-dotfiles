@@ -28,4 +28,3 @@ prepend_rules = [
     { mime = "application/pdf", use = "img_view" },
 ]
 append_rules = [{ url = "*", use = "xdg-open" }]
-rules = []
