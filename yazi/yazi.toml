@@ -14,6 +14,7 @@ img_view = [
     { run = "firefox %S", desc = "Firefox", orphan = true },
 ]
 img_edit = [{ run = "gimp %S", desc = "Edit in GIMP", orphan = true }]
+wine_run = [{ run = "wine %s", desc = "Run via WINE", orphan = true }]
 xdg-open = [{ run = "xdg-open %s", desc = "xdg-open" }]
 
 [open]
@@ -26,5 +27,6 @@ prepend_rules = [
         "img_edit",
     ] },
     { mime = "application/pdf", use = "img_view" },
+    { mime = "application/microsoft.*", use = "wine_run" },
 ]
 append_rules = [{ url = "*", use = "xdg-open" }]
