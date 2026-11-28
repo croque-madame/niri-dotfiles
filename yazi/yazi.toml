@@ -16,6 +16,12 @@ img_view = [
 img_edit = [{ run = "gimp %S", desc = "Edit in GIMP", orphan = true }]
 wine_run = [{ run = "wine %s", desc = "Run via WINE", orphan = true }]
 xdg-open = [{ run = "xdg-open %s", desc = "xdg-open" }]
+archive = [
+    { run = 'cd %d && tar -cf "$(basename "%s").tar" "$(basename "%s")"', desc = "Archive to tar" },
+    { run = 'cd %d && tar -czf "$(basename "%s").tar.gz" "$(basename "%s")"', desc = "Compress to tar.gz" },
+    { run = 'cd %d && zip -r "$(basename "%s").zip" "$(basename "%s")"', desc = "Compress to zip" },
+    { run = 'cd %d && 7z a "$(basename "%s").7z" "$(basename "%s")"', desc = "Compress to 7zip" },
+]
 
 [open]
 prepend_rules = [
@@ -28,5 +34,9 @@ prepend_rules = [
     ] },
     { mime = "application/pdf", use = "img_view" },
     { mime = "application/microsoft.*", use = "wine_run" },
+    { mime = "{folder/*,inode/directory}", use = [
+        "xdg-open",
+        "archive",
+    ] },
 ]
 append_rules = [{ url = "*", use = "xdg-open" }]
